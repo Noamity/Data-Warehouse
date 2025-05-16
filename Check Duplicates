@@ -8,3 +8,11 @@ cst_id
 COUNT(*) FROM customer
 GROUP BY cst_id
 HAVING COUNT(*) >1
+
+
+--- Checkk if there is duplicates with null value
+SELECT
+cst_id
+COUNT(*) FROM customer
+GROUP BY cst_id
+HAVING COUNT(*) > 1  OR cst_id IS NULL
