@@ -16,3 +16,7 @@ cst_id
 COUNT(*) FROM customer
 GROUP BY cst_id
 HAVING COUNT(*) > 1  OR cst_id IS NULL
+
+
+---- Create RANK value base on created date
+ROW_NUMBER () OVER (PARTITION BY CST_ID ORDER_BY cst_create_date)
