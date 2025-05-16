@@ -1,0 +1,10 @@
+-- Checks for nulls or duplicaties in primary key
+-- Expectation: No Result
+
+
+
+SELECT
+cst_id
+COUNT(*) FROM customer
+GROUP BY cst_id
+HAVING COUNT(*) >1
